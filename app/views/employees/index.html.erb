@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<nav class="navbar navbar-default">
+
+  <form class="form-inline">
+   
+    <%= link_to 'Show Employee',employees_path,:class => "btn  navbar-btn"%> ||
+    <%= link_to 'Show Organization', organizations_path, :class => "btn  navbar-btn"%>
+
+     </form>
+ 
+</nav>
+
+</br></br>
+
+<h1>Employees</h1>
+
+<div class="table-responsive">
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr class="warning">
+    <th class="text-center">ID</th>
+      <th class="text-center">Name</th>
+      <th class="text-center">Employe</th>
+      <th class="text-center">Email</th>
+      
+      <th class="text-center">Organization Id</th>
+      <th class="text-center" colspan="4">Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @employees.each do |employee| %>
+      <tr>
+      <td class="bg-primary"><%= employee.id %></td>
+        <td class="bg-danger"><%= employee.name %></td>
+        <td class="bg-info"><%= employee.employe_id %></td>
+        <td class="bg-success"><%= employee.email %></td>
+        
+       
+        <td class="bg-danger"><%= employee.organization_id %></td>
+        <td><%= link_to 'Show', employee, :class => "btn btn-success" %></td>
+        <td><%= link_to 'Edit', edit_employee_path(employee), :class => "btn btn-primary" %></td>
+        <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' },:class => 'btn btn-danger' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
+<%= will_paginate @employees, {:style=>'font-size: 150%;'} %>
+
+<br><br>
+
+<%= link_to 'New Employee', new_employee_path, {:style=>'color:	#CD5C5C;text-decoration: underline;font-size: 180%;'}  %>

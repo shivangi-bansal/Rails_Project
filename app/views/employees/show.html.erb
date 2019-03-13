@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+<% user1 =  @employee.organization %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @employee.name %>
+</p>
+
+<p>
+  <strong>Employe:</strong>
+  <%= @employee.employe_id %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @employee.email %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @employee.emp_type %>
+</p>
+<p>
+  <strong>Oranisation Id</strong>
+  <%= @employee.organization_id %>
+</p>
+<br><br><br>
+<p>Organization details</p>
+
+<div class="table-responsive">
+<table class="table table-bordered table-hover">
+<thead>
+<tr class="info">
+<th class="text-center">Name </th>
+<th class="text-center">Phone</th>
+<th class="text-center">City</th>
+</tr>
+</thead>
+<tr class="warning">
+
+<td>  <%= user1.name%></td>
+  <td><%= user1.phone%> </td>
+  <td><%= user1.city%> </td>
+</tr>
+</table>
+</div>
+</br></br>
+
+
+
+<%= link_to 'Edit', edit_employee_path(@employee) %> |
+<%= link_to 'Back', employees_path %>

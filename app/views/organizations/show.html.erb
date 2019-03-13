@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+<% user1 =  @organization.employees %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @organization.name %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @organization.phone %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @organization.city %>
+</p>
+<div class="table-responsive">
+<table class="table table-bordered table-hover">
+<thead> 
+<tr class="info">
+<th class="text-center"> Emp_Id </th>
+<th class="text-center"> Name </th>
+<th class="text-center"> Email </th>
+</tr>
+</thead>
+<% user1.each do |item| %>   
+  <tr class="warning">
+  
+     <td> <%= item.employe_id %> </td>   
+     <td> <%= item.name %></td>
+     <td> <%= item.email %> </td>   
+    
+
+   
+     
+     </tr>
+     <%end %>
+     </table>
+     </div>
+     </br>
+     </br>
+
+
+<%= link_to 'Edit', edit_organization_path(@organization) %> |
+<%= link_to 'Back', organizations_path %>
